@@ -98,8 +98,8 @@
             status_text = '';
             adxl = getADXL345(board);
 
-            myFirebase = new Firebase('https://dal-smart-manufacturing-default-rtdb.firebaseio.com/ntnu');
-            myFirebase2 = new Firebase('https://test-project-97787-default-rtdb.firebaseio.com/ntnu');
+            myFirebase = new Firebase('https://dal-smart-manufacturing-default-rtdb.firebaseio.com/ntnu2');
+            myFirebase2 = new Firebase('https://test-project-97787-default-rtdb.firebaseio.com/ntnu2');
 
             x = 0;
             y = 0;
@@ -119,12 +119,12 @@
 
             if (adxl._z != null) {
 
-                // message = aaa.toString();
-                // encrypt = CryptoJS.AES.encrypt(message, CryptoJS.enc.Utf8.parse(aseKey), {
-                //   mode: CryptoJS.mode.ECB,
-                //   padding: CryptoJS.pad.Pkcs7
-                // }).toString();
-                // console.log("encrypt => ", encrypt);
+                message = aaa.toString();
+                encrypt = CryptoJS.AES.encrypt(message, CryptoJS.enc.Utf8.parse(aseKey), {
+                  mode: CryptoJS.mode.ECB,
+                  padding: CryptoJS.pad.Pkcs7
+                }).toString();
+                console.log("encrypt => ", encrypt);
 
                 myFirebase2.push({
                 date: get_date("ymd"),
