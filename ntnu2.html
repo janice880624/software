@@ -111,7 +111,7 @@
             adxl._z = _z;
             adxl._r = _r;
             adxl._p = _p;
-            aaa = adxl._z;
+            aaa = adxl._z + 1;
             console.log("adxl._z =>", aaa)
             x = (Math.round(((Math.abs(adxl._z - y)))*100000))/100000;
             status2();
@@ -121,8 +121,8 @@
 
                 message = aaa.toString();
                 encrypt = CryptoJS.AES.encrypt(message, CryptoJS.enc.Utf8.parse(aseKey), {
-                  mode: CryptoJS.mode.ECB,
-                  padding: CryptoJS.pad.Pkcs7
+                    mode: CryptoJS.mode.ECB,
+                    padding: CryptoJS.pad.Pkcs7
                 }).toString();
                 console.log("encrypt => ", encrypt);
 
