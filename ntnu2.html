@@ -74,10 +74,10 @@
         }
 
         function status2() {
-            if (x > 0.6 && x != 1) {
-            status_text = '機台正常運作';
+            if (x > 0.7 && x != 1) {
+                status_text = '機台異常震動';
             } else {
-            status_text = '機台異常震動';
+                status_text = '機台正常運作';
             }
         }
 
@@ -113,7 +113,7 @@
             adxl._p = _p;
             aaa = adxl._z + 1;
             console.log("adxl._z =>", aaa)
-            x = (Math.round(((Math.abs(adxl._z - y)))*100000))/100000;
+            x = (Math.round(((Math.abs(aaa - y)))*100000))/100000;
             status2();
             document.getElementById('show').innerHTML = ([get_time("hms"), ("<br/>"), String('震動幅度 :'), adxl._z, ("<br/>"), String('status : ') + String(status_text)].join(''));
 
